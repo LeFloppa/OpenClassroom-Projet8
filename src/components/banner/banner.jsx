@@ -3,6 +3,7 @@ import './banner.scss';
 
 const Banner = ({ text, image }) => {
     const bannerStyle = {
+        text: '',
         backgroundImage: `url(${image})`
     };
     return (

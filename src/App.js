@@ -2,10 +2,10 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import HeaderComponent from './components/header/header';
 import FooterComponent from './components/footer/footer';
-import HomePage from './pages/HomePage/HomePage';
-import AboutPage from './pages/AboutPage/AboutPage';
-import PropertyPage from './pages/PropertyPage/PropertyPage';
-import ErrorPage from './pages/ErrorPage/ErrorPage';
+import HomePage from './pages/HomePage/homepage';
+import AboutPage from './pages/AboutPage/aboutpage';
+import PropertyPage from './pages/PropertyPage/propertypage';
+import ErrorPage from './pages/ErrorPage/errorpage';
 
 import './sass/main.scss';
 

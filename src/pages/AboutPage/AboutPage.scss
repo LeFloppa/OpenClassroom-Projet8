@@ -1,0 +1,127 @@
+@import "../../sass/main";
+
+.about-page {
+  .banner {
+    margin: 0 14rem;
+
+    @include respond(tab-land) {
+      border-radius: 10px;
+      margin: 0 auto;
+      width: 93%;
+    }
+
+    @include respond(tab-port) {
+      width: 96%;
+      border-radius: 10px;
+    }
+
+    @include respond(phone) {
+      width: 90%;
+      height: 223px;
+    }
+  }
+
+  .content {
+    padding: 0.5rem 4rem 3rem;
+
+    @include respond(tab-port) {
+      padding: 0.5rem 2rem 2rem;
+    }
+
+    @include respond(phone) {
+      padding: 0 0 2rem;
+    }
+
+    .collapses {
+      .collapse {
+        width: 75%;
+        border-radius: 5px;
+        overflow: hidden;
+        margin: 3rem auto 0;
+        box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
+        transition: height 0.5s ease-in-out;
+
+        @include respond(tab-port) {
+          width: 90%;
+        }
+
+        @include respond(phone) {
+          width: 90%;
+        }
+
+        &.open {
+          height: auto;
+          animation: slideDownContent 2s forwards;
+
+          .collapse-content {
+            animation: slideDownContent 0.5s forwards;
+            display: block;
+          }
+
+          .arrow {
+            animation: rotateDown 0.3s forwards;
+          }
+        }
+
+        .collapse-header {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 1rem 2rem;
+          cursor: pointer;
+          background-color: #FF6060;
+
+          h3 {
+            font-size: 18px;
+            font-weight: 500;
+            color: white;
+            margin: 0;
+          }
+
+          .arrow {
+            font-size: 20px;
+            color: white;
+          }
+        }
+
+        .collapse-content {
+          padding: 3rem 2rem;
+          display: none;
+          background-color: #f8f8f8;
+          color: #FF6060;
+          font-size: 18px;
+          animation: slideDownContent 0.8s forwards;
+        }
+      }
+    }
+  }
+}
+
+@keyframes slideDownContent {
+    from {
+      max-height: 42px;
+    }
+    to {
+      max-height: 1000px; 
+    }
+}
+
+
+
+@keyframes slideUpContent {
+    from {
+      max-height: 1000px;
+    }
+    to {
+      max-height: 42px;
+    }
+}
+
+@keyframes rotateDown {
+  from {
+    transform: rotate(180deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
