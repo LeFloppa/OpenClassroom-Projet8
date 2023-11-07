@@ -1,0 +1,106 @@
+@import "../../sass/main";
+
+.collapse {
+    width: 75%;
+    border-radius: 5px;
+    overflow: hidden;
+    margin: 3rem auto 0;
+
+    &.open {
+      .arrow {
+        animation: rotateDown 0.5s forwards;
+      }
+    }
+
+    &:not(.open) {
+      .arrow {
+        animation: rotateUp 0.5s forwards;
+      }
+    }
+
+    @include respond(tab-port) {
+      width: 90%;
+    }
+
+    @include respond(phone) {
+      width: 90%;
+    }
+
+    .collapse-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 2rem;
+      cursor: pointer;
+      background-color: #FF6060;
+
+      h3 {
+        font-size: 18px;
+        font-weight: 500;
+        color: white;
+        margin: 0;
+      }
+
+      .arrow {
+        font-size: 20px;
+        color: white;
+      }
+    }
+
+    .collapse-content {
+      background-color: #f8f8f8;
+      color: #FF6060;
+      transform-origin: center top;
+      font-size: 18px;
+
+      &.open {
+        animation: slideDownContent 0.5s forwards;
+        padding: 3rem 2rem;
+      }
+
+      &:not(.open) {
+        animation: slideUpContent 0.3s forwards;
+      }
+    }
+}
+@keyframes rotateDown {
+    0% {
+        transform: rotate(180deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes rotateUp {
+    0% {
+        transform: rotate(-180deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes slideDownContent {
+    0% {
+        transform: scaleY(0);
+    }
+    100% {
+        transform: scaleY(1);
+    }
+}
+
+@keyframes slideUpContent {
+    0% {
+        transform: scaleY(1);
+        height: 120px;
+        opacity: 1;
+        padding: 3rem 2rem;
+    }
+    100% {
+        transform: scaleY(0);
+        height: 0px;
+        opacity: 0;
+        padding: 0 0 0 2rem;
+    }
+}

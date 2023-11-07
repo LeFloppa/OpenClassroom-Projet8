@@ -23,3 +23,8 @@ html {
 body {
     font-family: $font-family-montserrat;
 }
+
+div.App > *:not(footer) {
+    max-width: 1440px;
+    margin: 0 auto;
+}

@@ -1,0 +1,68 @@
+@import "../../sass/main";
+
+.slideshow {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    width: 80%;
+    max-width: 1160px;
+    margin: 0 auto;
+
+    @include respond(tab-land) {
+        width: 93%;
+    }
+
+    @include respond(tab-port) {
+        width: 96%;
+    }
+
+    @include respond(phone) {
+        width: 94%;
+    }
+
+    .arrow_left,
+    .arrow_right {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        cursor: pointer;
+        z-index: 2;
+
+    @include respond(tab-land) {
+        height: 15%;
+    }
+
+    @include respond(tab-port) {
+        height: 13%;
+    }
+
+    @include respond(phone) {
+        height: 10%;
+    }
+}
+
+    .arrow_left {
+        left: 10px;
+    }
+
+    .arrow_right {
+        right: 10px;
+    }
+
+    .slide-number {
+        position: absolute;
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 1.5rem;
+        color: white;
+        font-size: 18px;
+    
+    @include respond(phone) {
+        visibility: hidden;
+      }
+}
+}

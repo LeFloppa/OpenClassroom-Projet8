@@ -1,29 +1,41 @@
 @import "../../sass/main";
 
 .gallery {
-    background-color: #f6f6f6;
-    padding: 5rem 5rem;
-    margin: 43px 14rem;
-    border-radius: 25px;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  background-color: #f6f6f6;
+  padding: 5rem 5rem;
+  margin: 43px 14rem;
+  border-radius: 25px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 
-    @include respond(tab-land) {
-      margin: 2rem 4rem;
-    }
-  
-    @include respond(tab-port) {
-      padding: 2rem 0.2rem;
-      margin: 0px;
-      background-color: white;
-    } 
+  @include respond(tab-land) {
+    margin: 2rem 4rem;
   }
-  
-  .gallery-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
 
-    @include respond(tab-port) {
-        justify-content: center;
-      }
+  @include respond(tab-port) {
+    padding: 2rem 0.2rem;
+    margin: 0px;
+    background-color: white;
   }
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  gap: 50px 60px;
+
+  @include respond(tab-land) {
+    gap: 25px 30px;
+  }
+
+  @include respond(tab-port) {
+    grid-template-columns: auto auto;
+    gap: 18px;
+    margin: 1.5rem;
+  }
+
+  @include respond(phone) {
+    grid-template-columns: auto;
+    gap: 2.5rem;
+    margin: 0;
+  }
+}

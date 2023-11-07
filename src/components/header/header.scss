@@ -5,13 +5,16 @@
     align-items: center;
     justify-content: space-between;
     padding: 43px 14rem;
+    max-width: 1440px;
+    width: 100%;
+    align-items: center;
 
     @include respond(tab-land) {
         padding: 2rem 4rem;
       }
     
       @include respond(tab-port) {
-        padding: 2rem 2rem;
+        padding: 2rem;
       }
   
     .logo {

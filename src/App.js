@@ -18,7 +18,7 @@ function App() {
           <Route path="/" element={<Navigate to="/Home" />} />
           <Route path="/Home" element={<HomePage />} />
           <Route path="/a-propos" element={<AboutPage />} />
-          <Route path="/fiche-logement" element={<PropertyPage />} />
+          <Route path="/logement/:id" element={<PropertyPage />} />
           <Route path="*" element={<ErrorPage />} />
         </Routes>
         <FooterComponent />
