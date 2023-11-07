@@ -12,14 +12,14 @@ const HeaderComponent = () => {
       </div>
       <nav className="nav">
         <NavLink
-          to="/Home"
+          to="/home"
           activeclassname="active"
           className="nav__link"
         >
           Accueil
         </NavLink>
         <NavLink
-          to="/A-Propos"
+          to="/a-propos"
           activeclassname="active"
           className="nav__link"
         >

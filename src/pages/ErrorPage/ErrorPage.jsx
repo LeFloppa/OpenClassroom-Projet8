@@ -6,7 +6,7 @@ const ErrorPage = () => {
     const navigate = useNavigate();
 
     const handleReturnToHome = () => {
-        navigate('/Home');
+        navigate('/home');
     };
     return (
         <div className="error-page">
