@@ -1,12 +1,15 @@
 import React from 'react';
 import './banner.scss';
 
-const Banner = () => {
-  return (
-    <section className="banner">
-      <h1 className="banner-text">Chez vous, partout et ailleurs</h1>
-    </section>
-  );
+const Banner = ({ text, image }) => {
+    const bannerStyle = {
+        backgroundImage: `url(${image})`
+    };
+    return (
+        <section className="banner" style={bannerStyle}>
+            <div className="banner-text">{text}</div>
+        </section>
+    );
 };
 
 export default Banner;

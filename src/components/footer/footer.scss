@@ -1,3 +1,5 @@
+@import "../../sass/main";
+
 .footer {
     height: 209px;
     background-color: black;
@@ -6,17 +8,30 @@
     align-items: center;
     justify-content: flex-end;
     padding-bottom: 10px;
-  
+
+    @include respond(phone) {
+        justify-content: center;
+    }
+
     .logo {
-      margin-top: 20px;
-      img {
-        width: 122px; 
-      }
+        margin-top: 20px;
+
+        img {
+            width: 122px;
+        }
     }
-  
+
     .footer-text {
-      color: white;
-      font-size: 20px;
-      margin-top: 68px;
+        color: white;
+        font-size: 20px;
+        margin-top: 68px;
+        font-weight: 500;
+
+        @include respond(phone) {
+            font-size: 12px;
+            margin-top: 10px;
+            width: 133px;
+            text-align: center;
+        }
     }
-  }
+}

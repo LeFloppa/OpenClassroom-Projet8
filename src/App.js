@@ -19,7 +19,7 @@ function App() {
           <Route path="/Home" element={<HomePage />} />
           <Route path="/a-propos" element={<AboutPage />} />
           <Route path="/fiche-logement" element={<PropertyPage />} />
-          <Route path="/*" element={<ErrorPage />} />
+          <Route path="*" element={<ErrorPage />} />
         </Routes>
         <FooterComponent />
       </div>

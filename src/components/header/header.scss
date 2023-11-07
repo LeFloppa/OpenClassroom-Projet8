@@ -1,12 +1,26 @@
+@import "../../sass/main";
+
 .header {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 43px 14rem;
+
+    @include respond(tab-land) {
+        padding: 2rem 4rem;
+      }
+    
+      @include respond(tab-port) {
+        padding: 2rem 2rem;
+      }
   
     .logo {
       img {
-        width: 210px; 
+        width: 210px;
+
+        @include respond(tab-port) {
+          width: 145px;
+        }
       }
     }
   
@@ -19,9 +33,26 @@
         text-decoration: none;
         margin-left: 20px;
         font-size: 24px;
+        
+      @include respond(tab-port) {
+        font-size: 12px;
+        text-transform: uppercase;
+      }
   
         &.active {
-          border-bottom: 2px solid #FF6060; 
+            border-bottom: 2px solid #FF6060;
+
+            @include respond(tab-port) {
+              border-bottom: 1px solid #FF6060;
+            }
+          }
+    
+          &:first-child {
+            margin-right: 57px;
+    
+            @include respond(tab-port) {
+              margin-right: 0;
+            }
         }
       }
     }  

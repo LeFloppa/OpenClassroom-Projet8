@@ -13,13 +13,15 @@ const HeaderComponent = () => {
       <nav className="nav">
         <NavLink
           to="/Home"
-          className={({ isActive }) => (isActive ? 'nav__link active' : 'nav__link')}
+          activeclassname="active"
+          className="nav__link"
         >
           Accueil
         </NavLink>
         <NavLink
           to="/A-Propos"
-          className={({ isActive }) => (isActive ? 'nav__link active' : 'nav__link')}
+          activeclassname="active"
+          className="nav__link"
         >
           A Propos
         </NavLink>
