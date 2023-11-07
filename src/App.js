@@ -1,23 +1,30 @@
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import logo from './logo.svg';
-import './App.css';
-import HomePage from './pages/HomePage';
-import AboutPage from './pages/AboutPage';
-import ErrorPage from './pages/ErrorPage';
-import PropertyPage from './pages/PropertyPage';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import HeaderComponent from './components/header/header';
+import FooterComponent from './components/footer/footer';
+import HomePage from './pages/HomePage/HomePage';
+import AboutPage from './pages/AboutPage/AboutPage';
+import PropertyPage from './pages/PropertyPage/PropertyPage';
+import ErrorPage from './pages/ErrorPage/ErrorPage';
+
+import './sass/main.scss';
 
 function App() {
   return (
     <Router>
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/about" element={<AboutPage />} />
-        <Route path="/property/:id" element={<PropertyPage />} />
-        <Route path="*" element={<ErrorPage />} />
-      </Routes>
+      <div className="App">
+        <HeaderComponent />
+        <Routes>
+          <Route path="/" element={<Navigate to="/Home" />} />
+          <Route path="/Home" element={<HomePage />} />
+          <Route path="/a-propos" element={<AboutPage />} />
+          <Route path="/fiche-logement" element={<PropertyPage />} />
+          <Route path="/*" element={<ErrorPage />} />
+        </Routes>
+        <FooterComponent />
+      </div>
     </Router>
   );
 }
-
 
 export default App;
