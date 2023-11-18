@@ -1,10 +1,10 @@
-    import React, { useState } from 'react';
-    import './slideshow.scss';
-    import Banner from '../banner/banner';
-    import ArrowLeft from '../arrows/arrowleft';
-    import ArrowRight from '../arrows/arrowright';
+import React, { useState } from 'react';
+import './slideshow.scss';
+import Banner from '../banner/banner';
+import ArrowLeft from '../arrows/arrowleft';
+import ArrowRight from '../arrows/arrowright';
 
-    const Slideshow = ({ property, bannerStyle }) => {
+const Slideshow = ({ property, bannerStyle }) => {
     const { pictures } = property;
     const [currentIndex, setCurrentIndex] = useState(0);
     const maxIndex = pictures.length - 1;
@@ -19,12 +19,14 @@
 
     return (
         <div className="slideshow">
-        <ArrowLeft onClick={handlePrev} />
-        <Banner image={pictures[currentIndex]} style={bannerStyle}/>
-        <ArrowRight onClick={handleNext} />
-        <div className="slide-number">{`${currentIndex + 1}/${pictures.length}`}</div>
+            {pictures.length > 1 && <ArrowLeft onClick={handlePrev} />}
+            <Banner image={pictures[currentIndex]} style={bannerStyle} />
+            {pictures.length > 1 && <ArrowRight onClick={handleNext} />}
+            {pictures.length > 1 && (
+                <div className="slide-number">{`${currentIndex + 1}/${pictures.length}`}</div>
+            )}
         </div>
     );
-    };
+};
 
-    export default Slideshow;
+export default Slideshow;
